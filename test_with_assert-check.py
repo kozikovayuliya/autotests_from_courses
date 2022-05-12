@@ -3,14 +3,17 @@ import time
 from selenium.webdriver.common.by import By
 
 try:
-    link = "http://suninjuly.github.io/registration1.html"
+    link = "http://suninjuly.github.io/registration2.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    elements = browser.find_elements(By.CSS_SELECTOR, '.first_block .form-group input')
-    for element in elements:
-        element.send_keys('something')
+    input1 = browser.find_element(By.CSS_SELECTOR, '.first_block input.form-control.first')
+    input1.send_keys('something')
+    input2 = browser.find_element(By.CSS_SELECTOR, '.first_block input.form-control.second')
+    input2.send_keys('something')
+    input3 = browser.find_element(By.CSS_SELECTOR, '.first_block input.form-control.third')
+    input3.send_keys('something')
 
     # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
